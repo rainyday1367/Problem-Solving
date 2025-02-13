@@ -1,30 +1,29 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-
-	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		int p = Integer.parseInt(st.nextToken());
-		int q = Integer.parseInt(st.nextToken());
-		
-		int result = 0;
-		int count = 0;
-		for(int i = 1; i <= p; i++) { //굳이 배열을 만들지 않아도 된다.
-			if(p%i == 0){
-				count++;
-			}
-			if(count == q) {
-				result = i;
-				break;
-			}
-		}		
-		System.out.println(result);
-	}
-
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        // 입력하는 정수 n과 k가 필요하고
+        // count(k번째 정수를 찾을 변수), result(출력하는 값)
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
+        int count = 0;
+        int result = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+            if (count == k) {
+                result = i;
+                break;
+            }
+        }
+        bw.write(String.valueOf(result) + "\n");
+        bw.flush();
+        br.close();
+        bw.close();
+    }
 }
