@@ -16,7 +16,7 @@ public class Main {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        Arrays.sort(arr, (a, b) -> b - a);
+//        Arrays.sort(arr, (a, b) -> b - a);
 
         int result = greedy(arr, k);
         System.out.println(result);
@@ -24,17 +24,11 @@ public class Main {
 
     private static int greedy(Integer[] arr, int k) {
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > k) {
-                continue;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] <= k) {
+                count += k / arr[i];
+                k %= arr[i];
             }
-
-            if (k / arr[i]  == 0) {
-                return k / arr[i] + count;
-            }
-
-            count += k / arr[i];
-            k %= arr[i];
         }
         return count;
     }
