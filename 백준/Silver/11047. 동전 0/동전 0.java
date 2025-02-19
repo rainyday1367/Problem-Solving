@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
         int n = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
         Integer[] arr = new Integer[n];
@@ -18,11 +19,6 @@ public class Main {
 
 //        Arrays.sort(arr, (a, b) -> b - a);
 
-        int result = greedy(arr, k);
-        System.out.println(result);
-    }
-
-    private static int greedy(Integer[] arr, int k) {
         int count = 0;
         for (int i = arr.length - 1; i >= 0; i--) {
             if (arr[i] <= k) {
@@ -30,6 +26,7 @@ public class Main {
                 k %= arr[i];
             }
         }
-        return count;
+        sb.append(count);
+        System.out.println(sb);
     }
 }
