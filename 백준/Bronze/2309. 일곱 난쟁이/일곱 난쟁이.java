@@ -16,8 +16,8 @@ public class Main {
         }
         Arrays.sort(arr);
         int index1 = 0, index2 = 0;
-        for (int i = 0; i < 9; i++) {
-            for (int j = i + 1; j < 9; j++) {
+        for (int i = 8; i >= 0; i--) {
+            for (int j = i - 1; j >= 0; j--) {
                 if (sum - arr[i] - arr[j] == 100) {
                     index1 = i;
                     index2 = j;
