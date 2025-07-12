@@ -5,7 +5,7 @@ class Solution {
         List<Integer> list = new ArrayList<>();
         
         for (int i = 0; i < intStrs.length; i++) {
-            String sub = intStrs[i].substring(s,  Math.min(s + l, intStrs[i].length()));
+            String sub = intStrs[i].substring(s,  s + l);
             int num = Integer.parseInt(sub);
             if (num > k) list.add(num);
         }
