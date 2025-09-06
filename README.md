@@ -1,3 +1,3 @@
-# Java_PS
+# Problem_Solving
 
-자바로 문제풀이 정리
+코테
